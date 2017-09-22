@@ -10,6 +10,19 @@ __author__ = 'Ваши Ф.И.О.'
 # * постарайтесь решить задачу с применением арифметики и цикла while;
 # * при желании и понимании решите задачу с применением цикла for.
 
+while True:
+    try:
+        bignum = int(input('Enter number: '))
+    except ValueError:
+        print('Only numbers accepted!')
+        continue
+    try:
+        list_num = [int(i) for i in str(bignum)]
+        print(max(list_num))
+        break
+    except ValueError:
+        print('Minus not allowed!')
+        continue
 
 # Задача-2: Исходные значения двух переменных запросить у пользователя.
 # Поменять значения переменных местами. Вывести новые значения на экран.
@@ -18,6 +31,12 @@ __author__ = 'Ваши Ф.И.О.'
 # * постарайтесь сделать решение через действия над числами;
 # * при желании и понимании воспользуйтесь синтаксисом кортежей Python.
 
+a = input('Name:')
+b = input('Age:')
+
+a, b = b, a
+
+print('Abracadabra! ' + a, b)
 
 # Задача-3: Напишите программу, вычисляющую корни квадратного уравнения вида
 # ax² + bx + c = 0.
