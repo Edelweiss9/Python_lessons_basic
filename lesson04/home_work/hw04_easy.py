@@ -6,9 +6,28 @@
 # квадратами элементов исходного списка
 # [1, 2, 4, 0] --> [1, 4, 16, 0]
 
+list_st = [1, 2, 4, 0]
+list_nd = list(i ** 2 for i in list_st)
+print(list_nd)
+
+
+def sqrt_gen(list):
+    new = [i ** 2 for i in list]
+    return new
+
+
+print(sqrt_gen([1, 2, 4, 0]))
+
+# На всякий случай написал в 1 функцию, но т.к. в задании не было, остальные без
+
 # Задание-2:
 # Даны два списка фруктов.
 # Получить список фруктов, присутствующих в обоих исходных списках.
+
+fruits_one = ['apple', 'banana', 'melon', 'peach', 'grape', 'mango']
+fruits_two = ['watermelon', 'raspberry', 'cherry', 'melon', 'banana', 'mango']
+fruits_both = list(i for i in fruits_one if i in fruits_two)
+print(fruits_both)
 
 # Задание-3:
 # Дан список, заполненный произвольными числами.
@@ -16,3 +35,7 @@
 # + Элемент кратен 3
 # + Элемент положительный
 # + Элемент не кратен 4
+
+list_one = [5, 9, 2, 1, 0, 7, 18, 33, 48, -1, 0, 91]
+list_new = list(i for i in list_one if i % 3 == 0 if i > 0 if i % 4 != 0)
+print(list_new)
