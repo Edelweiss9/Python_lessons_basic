@@ -12,8 +12,7 @@ print(list_nd)
 
 
 def sqrt_gen(list):
-    new = [i ** 2 for i in list]
-    return new
+    return [i ** 2 for i in list]
 
 
 print(sqrt_gen([1, 2, 4, 0]))
