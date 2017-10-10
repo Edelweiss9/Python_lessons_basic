@@ -6,8 +6,6 @@
 import os
 import shutil
 
-# if __name__ == "__main__":
-#     pass
 
 # Создание папок вида dir_n
 
@@ -31,22 +29,24 @@ def folderNumDeleter(n):
             print('Folder dir_{} does not exist!.'.format(i))
 
 
-# Удаление конкретной папки
+# Удаление папки
 
-def specFolderDeleter(dir):
+def specFolderDeleter():
+    path = str(input('WARNING! This will delete even non-empty folder! Enter dir: '))
     try:
-        shutil.rmtree(os.path.join(os.getcwd(), '{}'.format(dir)))
-        print('Folder "{}" deleted!'.format(dir))
+        shutil.rmtree(os.path.join(os.getcwd(), '{}'.format(path)))
+        print('Folder "{}" deleted!'.format(path))
     except FileNotFoundError as err:
         print(err)
 
 
-# Создание конкретной папки в текущей директории
+# Создание папки
 
-def specFolderCreator(dir):
+def specFolderCreator():
+    name = str(input('Enter folder name: '))
     try:
-        os.mkdir(dir)
-        print('Folder "{}" created'.format(dir))
+        os.mkdir(name)
+        print('Folder "{}" created'.format(name))
     except FileExistsError as err:
         print(err)
 
@@ -65,14 +65,25 @@ def listFolders():
 def copyCurrentFile():
     new = __file__ + '.copy.py'
     shutil.copy2(os.path.abspath(__file__), new)
+    print('File copied: ' + os.path.abspath(__file__), new)
 
 
 # -----------------------------------------------------------------------------
 # Export:
 
-def pathChanger(new):
+def pathChanger():
+    path = str(input('Enter path: '))
     try:
-        os.chdir(new)
+        os.chdir(path)
         print('Changed dir to: ' + os.getcwd())
     except FileNotFoundError:
-        print('Dir "{}" not found!'.format(new))
+        print('Dir "{}" not found!'.format(path))
+
+
+def helpCall():
+    print('"cd" - change directory: <path> or <folder_name> if folder is in current dir')
+    print('"li" - display folders in current directory')
+    print('"df" - delete folder')
+    print('"cf" - create folder')
+    print('"help" - available commands')
+    print('"q" - exit')
