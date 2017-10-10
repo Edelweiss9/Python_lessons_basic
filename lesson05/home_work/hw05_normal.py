@@ -19,7 +19,7 @@ import sys
 import shutil
 import hw05_easy as lib
 
-print('sys.argv = ', sys.argv)
+# print('sys.argv = ', sys.argv)
 
 
 def helpCall():
