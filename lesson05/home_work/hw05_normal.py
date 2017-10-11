@@ -15,7 +15,7 @@
 # и импортированные в данный файл из easy.py
 
 
-import sys
+
 import hw05_easy as lib
 
 
